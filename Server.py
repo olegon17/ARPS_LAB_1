@@ -8,7 +8,7 @@ def broadcast_data (sock, message):
 	for socket in CONNECTION_LIST:
 		if socket != server_socket and socket != sock :
 			try :
-				socket.send(message)
+				socket.send(message.encode())
 			except :
 				# broken socket connection may be, chat client pressed ctrl+c for example
 				socket.close()
